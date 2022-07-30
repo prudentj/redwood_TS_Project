@@ -10,11 +10,15 @@
 import { Private, Router, Route, Set } from '@redwoodjs/router'
 
 import BlogLayout from 'src/layouts/BlogLayout/BlogLayout'
+import LandingLayout from 'src/layouts/LandingLayout'
 import PostsLayout from 'src/layouts/PostsLayout'
 
 const Routes = () => {
   return (
     <Router>
+      <Set wrap={LandingLayout}>
+        <Route path="/landing" page={LandingPage} name="landing" />
+      </Set>
       <Route path="/login" page={LoginPage} name="login" />
       <Route path="/signup" page={SignupPage} name="signup" />
       <Route path="/forgot-password" page={ForgotPasswordPage} name="forgotPassword" />
