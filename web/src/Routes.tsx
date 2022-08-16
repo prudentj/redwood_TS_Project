@@ -16,6 +16,7 @@ import PostsLayout from 'src/layouts/PostsLayout'
 const Routes = () => {
   return (
     <Router>
+      <Route path="/hex-grid" page={HexGridPage} name="hexGrid" />
       <Set wrap={LandingLayout}>
         <Route path="/landing" page={LandingPage} name="landing" />
       </Set>

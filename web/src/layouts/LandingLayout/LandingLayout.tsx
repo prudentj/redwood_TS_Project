@@ -1,47 +1,75 @@
-//import { Link, routes } from '@redwoodjs/router'
+import { Link } from '@redwoodjs/router'
+
+import FooterLarge from 'src/components/FooterLarge/FooterLarge'
+import placeHolder from 'src/placeholderData/bDClonePlaceholder'
+
+const footer = placeHolder.footer
 
 type LandingLayoutProps = {
   children?: React.ReactNode
 }
-{
-  /* <nav className="flex-between">
-          <div className="flex-between">
-            <h1>
-              <Link to={routes.landing()}>Logo©️</Link>
-            </h1>
-          </div>
-          <ul>
-            <li>
-              <Link to={routes.about()}>About</Link>
-            </li>
-            <li>
-              <Link to={routes.contact()}>Contact</Link>
-            </li>
-          </ul>
-        </nav> font-semibold*/
-}
+
+// const placeHolderFooterList: FooterListProps = {
+//   name: 'Social',
+//   links: [
+//     {
+//       name: 'Instagram',
+//       url: 'www.instagram.com',
+//     },
+//     {
+//       name: 'Twitter',
+//       url: 'https://twitter.com',
+//     },
+//     {
+//       name: 'LinkedIn',
+//       url: 'https://www.linkedin.com/',
+//     },
+//     {
+//       name: 'Facebook',
+//       url: 'www.facebook.com',
+//     },
+//   ],
+// }
+
+// const placeHolder: FooterLargeProps = {
+//   logo: 'B/D®️',
+//   callToAction: "We collaborate with ambitious brands and people. Let's build.",
+//   email: 'biz@basicagency.com',
+//   lists: [placeHolderFooterList, placeHolderFooterList, placeHolderFooterList],
+//   subscribeHeading: 'Stay in the Know',
+//   nameLegal: 'BASIC/DEPT®, INC 10 - 22©',
+//   motto: 'Easy To Understand, Impossible to Ignore.™',
+//   termsUrl: 'https://www.bing.com/',
+//   privacyUrl: 'https://www.bing.com/',
+// }
+
 const LandingLayout = ({ children }: LandingLayoutProps) => {
   const logo = (
-    <h1 className="font-extrabold text-xl">
+    <Link className="text-xl font-extrabold" to="">
       LOGO<span className="text-xs">©️</span>
-    </h1>
+    </Link>
   )
   return (
     <>
-      <header className="bg-slate-600 py-6 px-7">
+      <header className="py-6 bg-slate-600 px-7">
         <nav className="flex flex-row justify-between">
           {logo}
-          <span className=" text-lg">MENU</span>
+          <span className="text-lg ">MENU</span>
         </nav>
       </header>
       <main>{children}</main>
-      <footer className="bg-slate-500 py-8 px-6">
-        {logo}
-        <p className="font-semibold text-xl">
-          Profound words go here. Call to action. <br />
-          <span className="underline">Email@Address!</span>{' '}
-        </p>
-        I am a humble footer
+      <footer>
+        <FooterLarge
+          logo={footer.logo}
+          callToAction={footer.callToAction}
+          email={footer.email}
+          lists={footer.lists}
+          subscribeHeading={footer.subscribeHeading}
+          nameLegal={footer.nameLegal}
+          motto={footer.motto}
+          termsUrl={footer.termsUrl}
+          privacyUrl={footer.privacyUrl}
+        />
       </footer>
     </>
   )

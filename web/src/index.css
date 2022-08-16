@@ -61,3 +61,121 @@ input.error, textarea.error {
 .flex-between button {
   display: inline;
 }
+.circularcursor {
+  background-color: transparent;
+  border:1px solid black;
+  height:20px;
+  width:20px;
+  border-radius:50%;
+  -moz-border-radius:50%;
+  -webkit-border-radius:50%;
+  position: absolute;
+  z-index: 1;
+}
+
+.arrow-right {
+  width: 0;
+  height: 0;
+  border-top: 60px solid transparent;
+  border-bottom: 60px solid transparent;
+
+  border-left: 60px solid;
+}
+.arrow-left {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+
+  border-right:10px solid;
+}
+
+//CSS FOR HEX GRID
+.hex-grid__list {
+  --amount: 5;
+  display: grid;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  grid-template-columns: repeat(var(--amount), 1fr, 2fr) 1fr;
+}
+
+/* .hex-grid__item {
+  position: relative;
+  grid-column: 1 / span 3;
+  grid-row: 1 / span 2;
+  height: 0;
+  padding-bottom: 100%;
+}
+
+.hex-grid__content {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+} */
+.hex-grid__list {
+  --amount: 5;
+  display: grid;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  grid-template-columns: repeat(var(--amount), 1fr, 2fr) 1fr;
+}
+.hex-grid__item {
+  /* snipped */
+  height: 0;
+  padding-bottom: 90%;
+}
+.hex-grid__content {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  clip-path: polygon(75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%, 25% 0);
+  padding: 2rem 25%;
+}
+.scrollbar::-webkit-scrollbar {
+  width: 10px;
+  height: 2px;
+  background-color: grey;
+  margin-bottom: 10px;
+}
+
+
+.scrollbar::-webkit-scrollbar-track {
+  border-radius: 100vh;
+
+
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background: #0F1014;
+  border-radius: 100vh;
+  border: 1px solid black;
+}
+
+.scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #0F1014;
+}
+
+.transitionShrink{
+  transition: width 10s height 10s;
+
+}
+
+/* .hex-grid__content {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  clip-path: polygon(75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%, 25% 0);
+  padding: 2rem 25%;
+} */
+
